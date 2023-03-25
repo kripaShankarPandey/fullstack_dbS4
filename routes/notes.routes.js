@@ -29,7 +29,7 @@ notesRoute.post("/add", authMiddleware, async (req, res) => {
 notesRoute.delete("/delete/:id", authMiddleware, async (req, res) => {
   //   console.log(req.params);
   try {
-    await NotesModel.findByIdAndDelete(req.params.id);
+    await NotesModel.findByIdAndDelete(req.params._id);
 
     res.send({ msg: "Data deleted to Db sucessfully" });
   } catch (err) {
